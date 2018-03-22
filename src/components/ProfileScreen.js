@@ -5,9 +5,9 @@ import style from '../style';
 export default class ProfileScreen extends Component {
     render() {
         return (
-        <View style={[style.screen, style.greyBg]}>
-            <Text>Profile</Text>
-        </View>
+            <View style={[style.screen, style.greyBg]}>
+                <Text>Profile</Text>
+            </View>
         );
     }
 }

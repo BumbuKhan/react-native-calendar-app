@@ -4,10 +4,10 @@ import style from '../style';
 
 export default class InboxScreen extends Component {
     render() {
-      return (
-        <View style={[style.screen, style.greyBg]}>
-          <Text>Inbox</Text>
-        </View>
-      );
+        return (
+            <View style={[style.screen, style.greyBg]}>
+                <Text>Inbox</Text>
+            </View>
+        );
     }
-  }
+}
