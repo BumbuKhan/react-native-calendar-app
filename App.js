@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {ScrollView, View, Text, Image, StyleSheet} from 'react-native';
 import {TabNavigator, TabBarBottom} from 'react-navigation';
 import {Calendar} from 'react-native-general-calendars';
 
@@ -26,10 +26,11 @@ class ContactsScreen extends Component {
 class CalendarScreen extends Component {
   render() {
     return (
-      <View style={[style.calendarScreen, style.greyBg]}>
-        <View>
-          <Text style={style.calendarTitle}>Calendar</Text>
-          <Calendar
+      <ScrollView style={style.greyBg}>
+        <View style={style.calendarScreen}>
+          <View>
+            <Text style={style.calendarTitle}>Calendar</Text>
+            <Calendar
             // Calendar type (gregorian, jalaali). Default = gregorian
             type={'gregorian'}
             // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
@@ -44,8 +45,9 @@ class CalendarScreen extends Component {
               '2018-03-29': {marked: true, dotColor: '#8AC44C'}
             }}
           />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
