@@ -26,7 +26,7 @@ class ContactsScreen extends Component {
 class CalendarScreen extends Component {
   render() {
     return (
-      <ScrollView style={style.greyBg}>
+      <ScrollView style={[style.greyBg, style.commonPadding]}>
         <View style={style.calendarScreen}>
           <View>
             <Text style={style.calendarTitle}>Calendar</Text>
@@ -45,6 +45,21 @@ class CalendarScreen extends Component {
               '2018-03-29': {marked: true, dotColor: '#8AC44C'}
             }}
           />
+          </View>
+        </View>
+
+        <View style={style.eventList}>
+          <Text style={style.eventListTitle}>MINE AFTALER</Text>
+
+          <View style={style.event}>
+            <View style={style.eventTimeWr}>
+              <Text style={style.eventTime}>12:00</Text>
+              <Text style={style.eventTime}>13:30</Text>
+            </View>
+            <View style={style.eventText}>
+              <Text style={style.eventTitle}>Mode hos AZ WEB</Text>
+              <Text style={style.eventDescription}>Productionsvej 1, 2600 Glostrup</Text>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -114,17 +129,48 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  greyBg: {
-    backgroundColor: '#EFF3F6'
-  },
-  calendarScreen: {
-    flex: 1,
-    padding: 24
-  },
+  commonPadding: {padding: 24},
+  greyBg: {backgroundColor: '#EFF3F6'},
+  calendarScreen: {flex: 1},
   calendarTitle: {
     backgroundColor: 'white',
     fontSize: 30,
     color: '#8AC44C',
     padding: 17
+  },
+
+  eventList: {
+    marginBottom: 18
+  },
+  event: {
+    flex: 1,
+    flexDirection: 'row',
+    marginBottom: 15
+  },
+  eventListTitle: {
+    marginTop: 20,
+    marginBottom: 15,
+    color: 'black'
+  },
+  eventTimeWr: {
+    borderRightWidth: 2,
+    borderRightColor: '#8AC44C',
+  },
+  eventText: {
+    paddingLeft: 8,
+    flex: 1,
+    justifyContent: 'center'
+  },
+  eventTime: {
+    color: '#333333',
+    fontSize: 22,
+    paddingRight: 8
+  },
+  eventTitle: {
+    fontSize: 20,
+    color: 'black'
+  },
+  eventDescription: {
+    fontSize: 14,
   }
 });
