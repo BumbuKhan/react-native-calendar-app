@@ -32,12 +32,12 @@ class App extends Component {
             <Text>Calendar</Text>
           </View>
 
-          <View name='third' style={style.tabItem}>
+          <View name='fourth' style={style.tabItem}>
             <Image source={require('./img/chat.png')}/>
             <Text>Inbox</Text>
           </View>
 
-          <View name='third' style={style.tabItem}>
+          <View name='fifth' style={style.tabItem}>
             <Image source={require('./img/settings.png')}/>
             <Text>Profile</Text>
           </View>
@@ -47,7 +47,9 @@ class App extends Component {
           Hello world
         </Text>
 
-        
+        <Text>
+          Viewing {this.state.curPage}
+        </Text>
       </View>
     );
   }
