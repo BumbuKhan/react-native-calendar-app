@@ -25,6 +25,14 @@ class ContactsScreen extends Component {
 
 class CalendarScreen extends Component {
   render() {
+    // a hardcoded data for a single event, in a real app will be fetched remotely
+    const eventData = {
+        title: 'Mode hos AZ WEB',
+        description: 'Productionsvej 1, 2600 Glostrup',
+        startTime: '12:00',
+        endTime: '13:30',
+    };
+
     return (
       <ScrollView style={[style.greyBg, style.commonPadding]}>
         <View style={style.calendarScreen}>
@@ -50,21 +58,27 @@ class CalendarScreen extends Component {
 
         <View style={style.eventList}>
           <Text style={style.eventListTitle}>MINE AFTALER</Text>
-
-          <View style={style.event}>
-            <View style={style.eventTimeWr}>
-              <Text style={style.eventTime}>12:00</Text>
-              <Text style={style.eventTime}>13:30</Text>
-            </View>
-            <View style={style.eventText}>
-              <Text style={style.eventTitle}>Mode hos AZ WEB</Text>
-              <Text style={style.eventDescription}>Productionsvej 1, 2600 Glostrup</Text>
-            </View>
-          </View>
+          <EventComponent {...eventData}/>
         </View>
       </ScrollView>
     );
   }
+}
+
+// a presentational component to render a single item of event
+const EventComponent = ({startTime, endTime, title, description}) => {
+  return (
+    <View style={style.event}>
+      <View style={style.eventTimeWr}>
+        <Text style={style.eventTime}>{startTime}</Text>
+        <Text style={style.eventTime}>{endTime}</Text>
+      </View>
+      <View style={style.eventText}>
+        <Text style={style.eventTitle}>{title}</Text>
+        <Text style={style.eventDescription}>{description}</Text>
+      </View>
+    </View>
+  );
 }
 
 class InboxScreen extends Component {
@@ -138,7 +152,6 @@ const style = StyleSheet.create({
     color: '#8AC44C',
     padding: 17
   },
-
   eventList: {
     marginBottom: 18
   },
