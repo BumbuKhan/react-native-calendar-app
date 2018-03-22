@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, View, Text} from 'react-native';
+import {ScrollView, View, Text, Image} from 'react-native';
 import {Calendar} from 'react-native-general-calendars';
 
 import style from '../style';
@@ -27,6 +27,17 @@ export default class CalendarScreen extends Component {
                             monthFormat={'MMM YYYY'}
                             // Hide day names. Default = false
                             hideDayNames={true}
+                            // Replace default arrows with custom ones (direction can be 'left' or 'right')
+                            renderArrow={(direction) => {
+                                // this piece of code might be shrunked down to something like this:
+                                // return <Image source={require(`../img/${direction}.png`)} />;
+                                // but 'require' function refuses to accept such param as an input :-(
+                                if (direction === 'left') {
+                                    return <Image source={require('../img/left.png')}/>;
+                                }
+
+                                return <Image source={require('../img/right.png')}/>;
+                            }}
                             // hardcoded, in real app might be fetched from some remote API
                             markedDates={{
                                 '2018-03-22': {selected: true, selectedColor: '#8AC44C'},

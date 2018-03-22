@@ -8,7 +8,9 @@ const style = StyleSheet.create({
     },
     commonPadding: {padding: 24},
     greyBg: {backgroundColor: '#EFF3F6'},
-    calendarScreen: {flex: 1},
+    calendarScreen: {
+        flex: 1
+    },
     calendarTitle: {
         backgroundColor: 'white',
         fontSize: 30,
