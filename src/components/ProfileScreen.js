@@ -6,7 +6,7 @@ export default class ProfileScreen extends Component {
     render() {
         return (
             <View style={[style.screen, style.greyBg]}>
-                <Text>Profile</Text>
+                <Text>PROFIL</Text>
             </View>
         );
     }

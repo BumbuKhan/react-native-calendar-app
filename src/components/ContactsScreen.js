@@ -6,7 +6,7 @@ export default class ContactsScreen extends Component {
     render() {
         return (
             <View style={[style.screen, style.greyBg]}>
-                <Text>Contacts</Text>
+                <Text>BORGERE</Text>
             </View>
         );
     }

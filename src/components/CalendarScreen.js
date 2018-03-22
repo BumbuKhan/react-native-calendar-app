@@ -19,7 +19,7 @@ export default class CalendarScreen extends Component {
             <ScrollView style={[style.greyBg, style.commonPadding]}>
                 <View style={style.calendarScreen}>
                     <View>
-                        <Text style={style.calendarTitle}>Calendar</Text>
+                        <Text style={style.calendarTitle}>Kalender</Text>
                         <Calendar
                             // Calendar type (gregorian, jalaali). Default = gregorian
                             type={'gregorian'}
