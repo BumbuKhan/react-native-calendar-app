@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshot.jpg" width="350"/>
+  <img src="screenshot.jpg" width="300"/>
 </p>
 
 # Required tools #
@@ -22,3 +22,7 @@ Once you've installed all needed tools & clone the repo - run `yarn` in order to
 And then type `react-native run-android` or `react-native run-ios` to launch the app in Android or IOS emulator respectively
 
 > NOTE: in order to create a brand new react-native app run `react-native init <your-project-name>` (this is how I did the initial deployment)
+
+# How to build apk #
+
+Please refer to the [official guide](https://facebook.github.io/react-native/docs/signed-apk-android.html)
