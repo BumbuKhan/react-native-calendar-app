@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
-import {TabNavigator, TabBarBottom} from 'react-navigation'
+import {TabNavigator, TabBarBottom} from 'react-navigation';
+import {Calendar} from 'react-native-general-calendars';
 
 class HomeScreen extends Component {
   render() {
     return (
-      <View style={style.screen}>
+      <View style={[style.screen, style.greyBg]}>
         <Text>Home</Text>
       </View>
     );
@@ -15,7 +16,7 @@ class HomeScreen extends Component {
 class ContactsScreen extends Component {
   render() {
     return (
-      <View style={style.screen}>
+      <View style={[style.screen, style.greyBg]}>
         <Text>Contacts</Text>
       </View>
     );
@@ -25,8 +26,25 @@ class ContactsScreen extends Component {
 class CalendarScreen extends Component {
   render() {
     return (
-      <View style={style.screen}>
-        <Text>Calendar</Text>
+      <View style={[style.calendarScreen, style.greyBg]}>
+        <View>
+          <Text style={style.calendarTitle}>Calendar</Text>
+          <Calendar
+            // Calendar type (gregorian, jalaali). Default = gregorian
+            type={'gregorian'}
+            // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+            monthFormat={'MMM YYYY'}
+            // Hide day names. Default = false
+            hideDayNames={true}
+            // hardcoded, in real app might be fetched from some remote API
+            markedDates={{
+              '2018-03-22': {selected: true, selectedColor: '#8AC44C'},
+              '2018-03-24': {marked: true, dotColor: '#8AC44C'},
+              '2018-03-26': {marked: true, dotColor: '#8AC44C'},
+              '2018-03-29': {marked: true, dotColor: '#8AC44C'}
+            }}
+          />
+        </View>
       </View>
     );
   }
@@ -35,7 +53,7 @@ class CalendarScreen extends Component {
 class InboxScreen extends Component {
   render() {
     return (
-      <View style={style.screen}>
+      <View style={[style.screen, style.greyBg]}>
         <Text>Inbox</Text>
       </View>
     );
@@ -45,7 +63,7 @@ class InboxScreen extends Component {
 class ProfileScreen extends Component {
   render() {
     return (
-      <View style={style.screen}>
+      <View style={[style.screen, style.greyBg]}>
         <Text>Profile</Text>
       </View>
     );
@@ -93,5 +111,18 @@ const style = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  greyBg: {
+    backgroundColor: '#EFF3F6'
+  },
+  calendarScreen: {
+    flex: 1,
+    padding: 24
+  },
+  calendarTitle: {
+    backgroundColor: 'white',
+    fontSize: 30,
+    color: '#8AC44C',
+    padding: 17
   }
 });
