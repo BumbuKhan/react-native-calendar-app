@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import Tabs from 'react-native-tabs'
 
 class App extends Component {
@@ -15,15 +15,39 @@ class App extends Component {
         <Tabs
             selected={this.state.curPage}
             style={{backgroundColor: 'white'}}
-            selectedStyle={{color: '#8CC540'}}
             onSelect={el => this.setState({curPage: el.props.name})}
         >
-          <Text name='first'>Home</Text>
-          <Text name='second'>Contacts</Text>
-          <Text name='third'>Calendar</Text>
-          <Text name='forth'>Inbox</Text>
-          <Text name='fifth'>Profile</Text>
+          <View name='first' style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <Image source={require('./img/home.png')}/>
+            <Text>Home</Text>
+          </View>
+
+          <View name='second' style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <Image source={require('./img/users.png')}/>
+            <Text>Contacts</Text>
+          </View>
+
+          <View name='third' style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <Image source={require('./img/calendar.png')}/>
+            <Text>Calendar</Text>
+          </View>
+
+          <View name='third' style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <Image source={require('./img/chat.png')}/>
+            <Text>Inbox</Text>
+          </View>
+
+          <View name='third' style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <Image source={require('./img/settings.png')}/>
+            <Text>Profile</Text>
+          </View>
         </Tabs>
+
+        <Text>
+          Hello world
+        </Text>
+
+        
       </View>
     );
   }
